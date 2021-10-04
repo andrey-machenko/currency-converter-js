@@ -4,7 +4,7 @@
 }
 
 .courses > *:first-child {
-    margin-left: 0;
+    margin-left: 5;
 }
 
 .courses > *:last-child {
@@ -16,8 +16,6 @@
     margin-left: 5px;
 }
 
-.course-item {
-}
 .course-item-title {
     font-weight: 700;
     font-size: 18px;
@@ -27,10 +25,11 @@
     font-weight: 300;
 }
 
-.course-item-value.top {
-    color: rgb(255, 51, 51);
+.calc-header {
+    text-align: center;
+    color: #63ccff;
 }
 
-.course-item-value.bottom {
-    color: rgb(19, 189, 61);
+.random {
+    
 }
