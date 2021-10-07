@@ -1,35 +1,165 @@
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 450px;
+    height: 290px;
+    background: #e0f2f1;
+    border-radius: 20px;
+    color: black;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    color: #364547;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 .courses {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
-.courses > *:first-child {
-    margin-left: 5;
+.courses div {
+    width: 100%;
 }
 
-.courses > *:last-child {
-    margin-right: 0;
-}
 
-.courses > * {
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.course-item-title {
-    font-weight: 700;
-    font-size: 18px;
-}
-.course-item-value {
-    font-size: 32px;
-    font-weight: 300;
-}
-
-.calc-header {
+.courses {
     text-align: center;
-    color: #63ccff;
+    font-size: 20px;
 }
 
-.random {
-    
+.course-a {
+    padding-left: 10px;
 }
+
+.course-b {
+    padding-right: 20px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    padding-left: 40px;
+}
+
+.one {
+    padding-left: 50px;
+}
+
+.two {
+    padding-left: 50px;
+}
+
+select {
+    width: 12.54em;
+    height: 30px;
+    cursor: pointer;
+    outline: none;
+    background: #e6ceff;
+    margin: 0.2em 0;
+    border-radius: 8px;
+    border: none;
+}
+
+input {
+    width: 168px;
+    height: 30px;
+    margin: 0.2em 0;
+    border-radius: 8px;
+    border: none;
+    background: #ffe5e5;
+    outline: none;
+    padding: 0 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container .box {
+    width: 100%;
+    display: flex;
+}
+
+.box div {
+    width: 100%;
+}
+
+select{
+    width: 95%;
+    height: 40px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    background: #7868e6;
+    color: white;
+    margin: 0.2em 0;
+    border-radius: 10px;
+    border: none;
+}
+
+input {
+    width: 95%;
+    height: 40px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background: edeef7;
+    outline: none;
+    padding: 0 1em;
+} */
+
