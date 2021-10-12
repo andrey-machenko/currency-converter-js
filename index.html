@@ -6,41 +6,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 	<link rel="stylesheet" href="style.css" />
-	<title>Currency convertert</title>
-
+	<title>Currency converter</title>
 </head>
 
 <body>
 	<div class="container">
 		<div class="box">
 			<form>
-				<h1>Currency convertert</h1>
-				<div class="courses">
-					<div class="course-a">
-						<div class="course-item-title">Курс BYN</div>
-						<div class="course-item-value" id="BYN">--.--</div>
-					</div>
-					<div class="course-b">
-						<div class="course-item-title">Курс USD</div>
-						<div class="course-item-value" id="USD">--.--</div>
-					</div>
+				<h1>Currency converter</h1>
+				<div id="table-rates">
 				</div>
 				<div class="row">
 					<div class="left-box">
-						<label class="one" for="name">Отдаю:</label>
-						<select class="form-control" id="exampleFormControlSelect1">
-							<option value="BYN" selected>BYN</option>
-							<option value="USD">USD</option>
+						<label class="one" for="name">Отдаю:</label><br>
+						<select class="form-control" id="selectedOne">
 						</select>
-						<input id="input" type="number" class="form-control" id="name" autofocus />
+						<input id="input" type="number" class="form-control" autofocus />
 					</div>
+					<button id="button" type="button"></button>
 					<div class="right-box">
-						<label class="two" for="name">Получаю:</label>
-						<select  id="select" class="form-controlTwo" id="exampleFormControlSelect1">
-							<option value="USD" selected>USD</option>
-							<option value="BYN">BYN</option>
+						<label class="two" for="name">Получаю:</label><br>
+						<select class="form-controlTwo" id="selectedTwo">
 						</select>
-						<input id="result" type="number" class="form-control" id="name" />
+						<input disabled id="result" type="number" class="form-control" />
 					</div>
 				</div>
 			</form>
