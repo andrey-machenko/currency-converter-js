@@ -9,6 +9,22 @@ const select = document.getElementById("select");
 const button = document.getElementById("button");
 const tableRates = document.getElementById("table-rates");
 
+const BYN = {
+  Cur_OfficialRate: 1,
+  Cur_Abbreviation: "BYN",
+};
+
+const createOption = (selectElement, currency, index) => {
+  const option = document.createElement("option");
+  option.value = currency.Cur_OfficialRate;
+  option.text = currency.Cur_Abbreviation;
+  selectElement.appendChild(option);
+  if (currency.Cur_Abbreviation === "USD") {
+    selectElement.selectedIndex = index + 1;
+  }
+  selectEl.selectedIndex = 0;
+};
+
 getCurrency();
 
 async function getCurrency() {
@@ -16,22 +32,23 @@ async function getCurrency() {
     "https://www.nbrb.by/api/exrates/rates?periodicity=0"
   );
   const data = await answer.json();
-  data.forEach((element) => {
-    if (element.Cur_Abbreviation === "RUB") {
-      element.Cur_OfficialRate /= 100;
-    }
-    rates[element.Cur_Abbreviation] = element.Cur_OfficialRate;
-    selectEl.innerHTML =
-      selectEl.innerHTML +
-      `<option value="${element.Cur_OfficialRate}">${element.Cur_Abbreviation}</option>`;
-    selectElRes.innerHTML =
-      selectElRes.innerHTML +
-      `<option value="${element.Cur_OfficialRate}">${element.Cur_Abbreviation}</option>`;
-  });
 
-  selectEl.innerHTML = selectEl.innerHTML + `<option value="0.40">BYN</option>`;
-  selectElRes.innerHTML =
-    selectElRes.innerHTML + `<option value="0.40">BYN</option>`;
+  createOption(selectEl, BYN);
+  createOption(selectElRes, BYN);
+
+  data
+    .sort((first, second) =>
+      first.Cur_Abbreviation.localeCompare(second.Cur_Abbreviation)
+    )
+    .forEach((element, index) => {
+      if (element.Cur_Abbreviation === "RUB") {
+        element.Cur_OfficialRate /= 100;
+      }
+      rates[element.Cur_Abbreviation] = element.Cur_OfficialRate;
+
+      createOption(selectEl, element, index);
+      createOption(selectElRes, element, index);
+    });
 }
 
 input.oninput = function () {
@@ -89,9 +106,10 @@ function setTableRates() {
     selectEl.options[selectEl.selectedIndex].value /
     selectElRes.options[selectElRes.selectedIndex].value
   ).toFixed(2);
-  tableRates.innerText = `1.00 ${selectEl.options[selectEl.selectedIndex].text} 
-  Equals
-    ${exchangeRate} ${selectElRes.options[selectElRes.selectedIndex].text}`;
+  tableRates.innerText =
+    `1.00 ${selectEl.options[selectEl.selectedIndex].text}\n` +
+    "Equals\n" +
+    `${exchangeRate} ${selectElRes.options[selectElRes.selectedIndex].text}`;
 }
 
 selectEl.onchange = function () {
