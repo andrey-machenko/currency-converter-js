@@ -129,6 +129,15 @@ h1 {
   line-height: 40px;
 }
 
+.badge {
+  display: inline-block;
+  background-color: rgba(191, 232, 249, 1);
+  border-radius: 9px;
+  padding: 1px 3px;
+  min-width: 75px;
+  text-align: center;
+}
+
 .row {
   width: 100%;
   display: flex;
